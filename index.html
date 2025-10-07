@@ -4,32 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vladimir Bucur | Portofoliu</title>
+
+    <!-- ✅ TailwindCSS corect (oficial CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ Configurație pentru culori + font frumos -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366F1", // Indigo
+              dark: "#0f172a",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ✅ Font frumos Inter -->
     <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- ✅ Lottie animație -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
     <!-- Navbar -->
     <header
-      class="bg-white/70 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-100"
+      class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-50 border-b border-gray-200"
     >
       <nav
         class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4"
       >
-        <h1 class="text-2xl font-bold text-indigo-600">Vladimir Bucur</h1>
+        <h1 class="text-2xl font-bold text-primary">Vladimir Bucur</h1>
         <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <li><a href="#about" class="hover:text-indigo-600">Despre</a></li>
-          <li><a href="#skills" class="hover:text-indigo-600">Abilități</a></li>
-          <li><a href="#projects" class="hover:text-indigo-600">Proiecte</a></li>
-          <li><a href="#links" class="hover:text-indigo-600">Linkuri</a></li>
-          <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+          <li><a href="#about" class="hover:text-primary">Despre</a></li>
+          <li><a href="#skills" class="hover:text-primary">Abilități</a></li>
+          <li><a href="#projects" class="hover:text-primary">Proiecte</a></li>
+          <li><a href="#links" class="hover:text-primary">Linkuri</a></li>
+          <li><a href="#contact" class="hover:text-primary">Contact</a></li>
         </ul>
         <button id="menu-btn" class="md:hidden text-2xl">☰</button>
       </nav>
+
       <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
         <ul class="flex flex-col items-center space-y-4 py-4 font-medium">
           <li><a href="#about">Despre</a></li>
@@ -44,7 +70,7 @@
     <!-- Hero Section -->
     <section
       id="hero"
-      class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20"
+      class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24"
     >
       <img
         src="https://avatars.githubusercontent.com/u/151484190?v=4"
@@ -52,16 +78,16 @@
         class="rounded-full w-36 h-36 mb-6 shadow-lg ring-4 ring-indigo-200"
       />
       <h2 class="text-4xl sm:text-5xl font-bold mb-3 text-gray-800">
-        Salut! Sunt <span class="text-indigo-600">Vladimir Bucur</span> 👋
+        Salut! Sunt <span class="text-primary">Vladimir Bucur</span> 👋
       </h2>
       <p class="text-lg text-gray-600 max-w-xl">
-        Student în anul I la masterul MTI. Îmi place să construiesc aplicații
-        web moderne, să explorez AI și să învăț tehnologii noi care pot avea
-        impact real.
+        Student în anul I la masterul <strong>MTI</strong>. Îmi place să
+        construiesc aplicații web moderne, să explorez AI și să învăț tehnologii
+        noi care pot avea impact real.
       </p>
       <a
         href="#projects"
-        class="mt-6 inline-block bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition transform hover:scale-105 shadow"
+        class="mt-6 inline-block bg-primary text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition transform hover:scale-105 shadow"
         >Vezi proiectele mele</a
       >
       <lottie-player
@@ -120,19 +146,18 @@
               class="w-full"
             />
             <div class="p-5">
-              <h4 class="font-semibold text-xl mb-2 text-indigo-600">
+              <h4 class="font-semibold text-xl mb-2 text-primary">
                 Proiect Demo
               </h4>
               <p class="text-gray-600 mb-3">
                 O aplicație web modernă care demonstrează abilități în React și
                 Tailwind CSS.
               </p>
-              <a href="#" class="text-indigo-600 font-medium hover:underline"
+              <a href="#" class="text-primary font-medium hover:underline"
                 >Vezi detalii →</a
               >
             </div>
           </div>
-          <!-- Add more cards as needed -->
         </div>
       </div>
     </section>
@@ -141,7 +166,7 @@
     <section id="links" class="py-24 bg-gray-100 text-center">
       <h3 class="text-3xl font-semibold mb-10">Linkuri Utile</h3>
       <div
-        class="flex flex-wrap justify-center gap-6 text-lg font-medium text-indigo-600"
+        class="flex flex-wrap justify-center gap-6 text-lg font-medium text-primary"
       >
         <a
           href="https://github.com/vladimirbucur"
@@ -155,15 +180,10 @@
           class="hover:underline"
           >LinkedIn</a
         >
-        <a
-          href="https://medium.com/"
-          target="_blank"
-          class="hover:underline"
-          >Blog (in curând)</a
+        <a href="https://medium.com/" target="_blank" class="hover:underline"
+          >Blog (în curând)</a
         >
-        <a
-          href="mailto:vladimir.bucur@example.com"
-          class="hover:underline"
+        <a href="mailto:vladimir.bucur@example.com" class="hover:underline"
           >Email</a
         >
       </div>
@@ -179,14 +199,14 @@
         </p>
         <a
           href="mailto:vladimir.bucur@example.com"
-          class="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition transform hover:scale-105"
+          class="bg-primary text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition transform hover:scale-105"
           >Trimite un email</a
         >
       </div>
     </section>
 
     <footer class="text-center py-6 text-gray-500 border-t">
-      © <span id="year"></span> Vladimir Bucur
+      © <span id="year"></span> Vladimir Bucur · Creat cu ❤️ și TailwindCSS
     </footer>
 
     <script src="script.js"></script>
